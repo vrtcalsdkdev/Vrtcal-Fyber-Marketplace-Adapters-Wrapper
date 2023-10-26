@@ -24,9 +24,9 @@ class VrtcalFyberMarketplaceAdaptersWrapper: NSObject, AdapterWrapperProtocol {
         sdkEventsLogger.log("Fyber Marketplace does not provide an sdk init callback")
     }
     
-    func handle(vrtcalAsSecondaryConfig: VrtcalAsSecondaryConfig) {
+    func handle(adTechConfig: AdTechConfig) {
         
-        switch vrtcalAsSecondaryConfig.placementType {
+        switch adTechConfig.placementType {
                 
             case .banner:
                 appLogger.log()
