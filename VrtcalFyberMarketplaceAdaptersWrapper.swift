@@ -19,9 +19,15 @@ class VrtcalFyberMarketplaceAdaptersWrapper: NSObject, AdapterWrapperProtocol {
     }
     
     func initializeSdk() {
+
         IASDKCore.sharedInstance().globalAdDelegate = self
-        IASDKCore.sharedInstance().initWithAppID("102960")
-        sdkEventsLogger.log("Fyber Marketplace does not provide an sdk init callback")
+        IASDKCore.sharedInstance().initWithAppID(
+            "102960",
+            completionBlock: { bool, error in
+                self.sdkEventsLogger.log("Fyber Marketplace initialized: \(bool) \(String(describing: error))")
+            },
+            completionQueue: nil
+        )
     }
     
     func handle(adTechConfig: AdTechConfig) {
