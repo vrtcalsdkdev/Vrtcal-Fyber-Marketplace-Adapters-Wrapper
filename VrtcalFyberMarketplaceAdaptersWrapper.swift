@@ -24,7 +24,7 @@ class VrtcalFyberMarketplaceAdaptersWrapper: NSObject, AdapterWrapperProtocol {
         IASDKCore.sharedInstance().initWithAppID(
             "102960",
             completionBlock: { bool, error in
-                self.sdkEventsLogger.log("Fyber Marketplace initialized: \(bool) \(String(describing: error))")
+                self.sdkEventsLogger.log("Fyber Marketplace initialized: \(bool) error: \(String(describing: error))")
             },
             completionQueue: nil
         )
